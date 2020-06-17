@@ -1,0 +1,7 @@
+<div class="row">
+    <app-person [person] = "firstHuman" (onClickPerson) = "displayFamily($event)"></app-person>
+</div>
+<div class="row" *ngIf = "displayChildren">
+    <p class="h3"> Children of {{firstHuman.name }}</p>
+    <app-person *ngFor="let c of firstHuman.children" [person] = "c" (onClickPerson) = "displayFamily($event)"></app-person>
+</div>
